@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html ng-app="ngBoilerplate" ng-controller="AppCtrl">
+  <head>
+    <title ng-bind="pageTitle"></title>
+
+    <!-- social media tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@joshdmiller">
+    <meta name="twitter:title" content="ngBoilerplate">
+    <meta name="twitter:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+    <meta name="twitter:creator" content="@joshdmiller">
+    <meta name="twitter:image:src" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846">
+    <meta property="og:title" content="ngBoilerplate" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://bit.ly/ngBoilerplate" />
+    <meta property="og:image" content="https://a248.e.akamai.net/assets.github.com/images/modules/logos_page/Octocat.png?1366128846" />
+    <meta property="og:description" content="Non-Trivial AngularJS Made Easy: Everything you need to kickstart AngularJS projects: a best-practice directory structure, an intelligent build system, and the best web design libraries around.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome from BootstrapCDN -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+    <!-- compiled CSS -->
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/Animation/Animation.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/Animation/lighter.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/BaseLayerPicker/BaseLayerPicker.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/BaseLayerPicker/lighter.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/CesiumInspector/CesiumInspector.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/CesiumWidget/CesiumWidget.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/CesiumWidget/lighter.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/FullscreenButton/FullscreenButton.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/Geocoder/Geocoder.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/Geocoder/lighter.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/InfoBox/InfoBox.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/InfoBox/InfoBoxDescription.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/NavigationHelpButton/NavigationHelpButton.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/NavigationHelpButton/lighter.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/PerformanceWatchdog/PerformanceWatchdog.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/SceneModePicker/SceneModePicker.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/SelectionIndicator/SelectionIndicator.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/Timeline/Timeline.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/Timeline/lighter.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/Viewer/Viewer.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/lighter.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/lighterShared.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/shared.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/cesium/Build/Cesium/Widgets/widgets.css" />
+    <link rel="stylesheet" type="text/css" href="assets/ngbp-0.3.2.css" />
+
+    <!-- compiled JavaScript -->
+    <script type="text/javascript" src="vendor/angular/angular.js"></script>
+    <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js"></script>
+    <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Cesium.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/ThirdParty/Workers/deflate.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/ThirdParty/Workers/inflate.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/cesiumWorkerBootstrapper.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/combineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createBoxGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createBoxOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createCircleGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createCircleOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createCorridorGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createCorridorOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createCylinderGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createCylinderOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createEllipseGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createEllipseOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createEllipsoidGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createEllipsoidOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createPolygonGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createPolygonOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createPolylineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createPolylineVolumeGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createPolylineVolumeOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createRectangleGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createRectangleOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createSimplePolylineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createSphereGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createSphereOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createVerticesFromHeightmap.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createVerticesFromQuantizedTerrainMesh.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createWallGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/createWallOutlineGeometry.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/transferTypedArrayTest.js"></script>
+    <script type="text/javascript" src="vendor/cesium/Build/Cesium/Workers/upsampleQuantizedTerrainMesh.js"></script>
+    <script type="text/javascript" src="src/app/about/about.js"></script>
+    <script type="text/javascript" src="src/app/app.js"></script>
+    <script type="text/javascript" src="src/app/home/home.js"></script>
+    <script type="text/javascript" src="src/common/plusOne/plusOne.js"></script>
+    <script type="text/javascript" src="templates-common.js"></script>
+    <script type="text/javascript" src="templates-app.js"></script>
+
+    <!-- it's stupid to have to load it here, but this is for the +1 button -->
+    <script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+      { "parsetags": "explicit" }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-init="menuCollapsed = true"
+            ng-click="menuCollapsed = ! menuCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            ngbp
+            <small>
+              <a href="http://github.com/ngbp/ngbp/blob/v0.3.2-release/CHANGELOG.md">
+                v0.3.2
+              </a>
+            </small>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" collapse="menuCollapsed">
+          <ul class="nav navbar-nav">
+            <li ui-sref-active="active">
+              <a href ui-sref="home">
+                <i class="fa fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li ui-sref-active="active">
+              <a href ui-sref="about">
+                <i class="fa fa-info-circle"></i>
+                What is it?
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ngbp/ngbp#readme">
+                <i class="fa fa-book"></i>
+                Read the Docs
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ngbp/ngbp">
+                <i class="fa fa-github-alt"></i>
+                Github
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ngbp/ngbp/issues">
+                <i class="fa fa-comments"></i>
+                Support
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" ui-view="main"></div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <ul class="social">
+            <li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="fa fa-google-plus-sign"></i></a></li>
+            <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="fa fa-twitter-sign"></i></a></li>
+            <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="fa fa-linkedin-sign"></i></a></li>
+            <li><a target="_blank" href="http://github.com/ngbp/ngbp"><i class="fa fa-github-sign"></i></a></li>
+          </ul>
+          
+
+          <p>
+            (c) 2013 <a href="http://www.joshdavidmiller.com">Josh David Miller</a>. 
+            <a href="http://github.com/ngbp/ngbp/fork_select">Fork this</a>
+            to kickstart your next project.
+            <br />
+            ngbp is based on
+            <a href="http://www.angularjs.org">AngularJS</a>,
+            <a href="http://getbootstrap.com">Bootstrap</a>, 
+            <a href="http://angular-ui.github.com/bootstrap">UI Bootstrap</a>,
+            and 
+            <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.        
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
